@@ -4,10 +4,13 @@ using namespace std;
 
 
 class Bintree {
+    enum class col {black, red};
     struct leaf {
         int number;
         leaf* childleft;
         leaf* childright;
+        leaf* parent;
+        col color;
     };
 leaf* rootleaf;
 public:

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1439926951 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\main.cpp
+1439927863 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\main.cpp
 	"Bintree.h"
 	"he.h"
 
@@ -17,21 +17,21 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1439926771 c:\program files (x86)\codeblocks\mingw\bin\qq1\include\bintree.h
+1439944700 c:\program files (x86)\codeblocks\mingw\bin\qq1\include\bintree.h
 
-1439927821 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\src\bintree.cpp
+1439946565 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\src\bintree.cpp
 	"Bintree.h"
 	<iostream>
 	<vector>
 	<..\he.h>
 
-1439927760 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\glut.cpp
+1439946584 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\glut.cpp
 	"he.h"
 	<cmath>
 	<sstream>
 	<string>
 
-1439926741 c:\program files (x86)\codeblocks\mingw\bin\qq1\he.h
+1439946565 c:\program files (x86)\codeblocks\mingw\bin\qq1\he.h
 	<GL/freeglut.h>
 	<iostream>
 	"Bintree.h"

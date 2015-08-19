@@ -29,20 +29,21 @@ void Bintree::add(int x, bool recurs)
 {
     static leaf* p;
     static leaf* root;
-    if (!recurs) {
+     if (!recurs) {
         p = new leaf {};
         root = rootleaf;
         p->number = x;
     }
-if (x == root->number)
+    if (x == root->number)
 {
     cout << x << " is already in table \n";
     return;
 }
+
     if (x > root->number) {
         if (root->childright == nullptr) {
             root->childright = p;
-
+            p->parent = root;
         } else {
             root = root->childright;
             add(x, true);
@@ -50,6 +51,7 @@ if (x == root->number)
     } else {
         if (root->childleft == nullptr) {
             root->childleft = p;
+           p->parent = root;
 
         } else {
             root = root->childleft;
