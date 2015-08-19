@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1439926951 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\main.cpp
+	"Bintree.h"
+	"he.h"
+
+1426338928 c:\glut\include\gl\glut.h
+	"freeglut_std.h"
+
+1426338928 c:\glut\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1439926771 c:\program files (x86)\codeblocks\mingw\bin\qq1\include\bintree.h
+
+1439927821 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\src\bintree.cpp
+	"Bintree.h"
+	<iostream>
+	<vector>
+	<..\he.h>
+
+1439927760 source:c:\program files (x86)\codeblocks\mingw\bin\qq1\glut.cpp
+	"he.h"
+	<cmath>
+	<sstream>
+	<string>
+
+1439926741 c:\program files (x86)\codeblocks\mingw\bin\qq1\he.h
+	<GL/freeglut.h>
+	<iostream>
+	"Bintree.h"
+
+1426338928 c:\glut\include\gl\freeglut.h
+	"freeglut_std.h"
+	"freeglut_ext.h"
+
+1426338928 c:\glut\include\gl\freeglut_ext.h
+	<stdarg.h>
+
