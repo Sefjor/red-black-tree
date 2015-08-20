@@ -1,10 +1,8 @@
 #ifndef BINTREE_H
 #define BINTREE_H
 using namespace std;
-
-
+ enum class col{black, red};
 class Bintree {
-    enum class col {black, red};
     struct leaf {
         int number;
         leaf* childleft;
@@ -14,11 +12,11 @@ class Bintree {
     };
 leaf* rootleaf;
 public:
-    Bintree(int x);
-    ~Bintree();
     void showtree( int xnew = 400, int ynew = 25);
-    void add(int x, bool recurs = false);
+    void add(int x);
 private:
-     void showtree(leaf* root, int xnew , int ynew, double level);
+    void showtree(leaf* root, int xnew , int ynew, double level);
+    void add(int x, leaf* root, leaf* father);
+    void makechilds(leaf* root);
 };
 #endif // BINTREE_H

@@ -2,6 +2,7 @@
 #include <cmath>
 #include <sstream>
 #include <string>
+//enum class col;
 extern Bintree b;
 void printtext(string txt, float num, float posX, float posY)
 {
@@ -37,7 +38,7 @@ void myline (int xfrom, int yfrom, int xto, int yto)
     glVertex2d(xto, yto);
     glEnd();
 }
-void quant(int x, int y, int& xleft, int& xright, int& yboth, int printnum, double level)
+void quant(int x, int y, int& xleft, int& xright, int& yboth, int printnum, double level, col color)
 {
     printtext("", printnum, x, y);
     int r = 12;
@@ -45,13 +46,17 @@ void quant(int x, int y, int& xleft, int& xright, int& yboth, int printnum, doub
     xright = x + r * dx;
     yboth = y + r * 2.5;
     xleft = x - r * dx;
-      glColor3f(1.0, 0, 0);
+    if (color == col::red)  glColor3f(1, 0, 0);
+    else glColor3f(0, 0, 0);
     mycircle(x, y, r);
+    if (printnum != 0)
+    {
     glColor3f(0, 0, 0);
     mycircle(xright, yboth, r);
     mycircle(xleft, yboth, r);
     myline(x + 0.8 * r, y + 0.6 * r, xright - 0.3 * r, yboth - 0.9 * r);
     myline(x - 0.8 * r, y + 0.6 * r, xleft + 0.3 * r, yboth - 0.9 * r);
+    }
 }
 void myglinit()
 {

@@ -2,62 +2,89 @@
 #include <iostream>
 #include <vector>
 #include <..\he.h>
-Bintree::Bintree(int x) :  rootleaf {new leaf {}} {
-    rootleaf->number = x;
-}
 
-Bintree::~Bintree()
-{
-    delete rootleaf;
-}
 void Bintree::showtree(int xnew, int ynew)
 {
- showtree(rootleaf, xnew, ynew, 0);
+    showtree(rootleaf, xnew, ynew, 0);
 }
 void Bintree::showtree(leaf* root, int xnew, int ynew, double level)
 {
     ++level;
     int xleft, xright, y;
-    quant(xnew, ynew, xleft, xright, y, root->number, level);
+    quant(xnew, ynew, xleft, xright, y, root->number, level, root->color);
     if (root->childleft != nullptr)
         showtree(root->childleft, xleft, y, level);
     if (root->childright != nullptr)
         showtree(root->childright, xright, y,level);
 }
-
-void Bintree::add(int x, bool recurs)
+void Bintree::makechilds(leaf* root)
 {
     static leaf* p;
-    static leaf* root;
-     if (!recurs) {
         p = new leaf {};
-        root = rootleaf;
-        p->number = x;
-    }
-    if (x == root->number)
+        root->childleft = p;
+        p->parent = root;
+        p->color = col::black;
+        p->number = 0;
+        p = new leaf {};
+        root->childright = p;
+        p->parent = root;
+        p->color = col::black;
+        p->number = 0;
+}
+void Bintree:: insert_case1(leaf* n)
 {
-    cout << x << " is already in table \n";
-    return;
+    if (n->parent == nullptr)
+		n->color = col::black;
+	else
+		insert_case2(n);
 }
+void insert_case2(leaf* n)
+{
+	if (n->parent->color == col::black)
+		return;
+	else
+		insert_case3(n);
+}
+void Bintree::add(int x)
+{
+    add(x, rootleaf, nullptr);
+}
+void Bintree::add(int x, leaf* root, leaf* father)
+{
+    leaf** ptemp;
+if (root == nullptr)
+{
 
-    if (x > root->number) {
-        if (root->childright == nullptr) {
-            root->childright = p;
-            p->parent = root;
-        } else {
-            root = root->childright;
-            add(x, true);
-        }
-    } else {
-        if (root->childleft == nullptr) {
-            root->childleft = p;
-           p->parent = root;
-
-        } else {
-            root = root->childleft;
-            add(x, true);
-        }
+        rootleaf = new leaf {};
+        rootleaf->number = x;
+        rootleaf->parent = nullptr;
+        rootleaf->color = col::black;
+        makechilds(rootleaf);
+        return;
+}
+  if (root->number == 0)
+{
+        root->number = x;
+        root->parent = father;
+        makechilds(root);
+        if (root->parent->color == col::black)
+        root->color = col::red;
+        else
+                {root->color = col::red;
+               if (p->parent->parent->childleft->color == col::red && p->parent->parent->childright->color == col::red)
+                }
+     //   }
+     return;
+}
+    if (x == root->number) {
+        cout << x << "is already in table \n";
+        return;
     }
+    if (x > root->number)
+        ptemp = &root->childright;
+    else ptemp = &root->childleft;
+        add(x, *ptemp, root);
+
 
 }
- Bintree b (15);
+Bintree b;
